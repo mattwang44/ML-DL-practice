@@ -1,6 +1,6 @@
 # PyTorch Tutorial
 
-PyTorch notes & learning materials. Focusing on how to use PyTorch implementation of DL papers
+PyTorch notes & learning materials. Focusing on how to use PyTorch and the implementation of DL papers using PyTorch.
 
 ## Reference 
 1. [Prof. Pecu & her team](https://github.com/pecu/PyTorch_CSX)
