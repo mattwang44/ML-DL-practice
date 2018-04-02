@@ -76,7 +76,7 @@ end
 %% plot
 figure
 plot(LossList)
-title('Loss over each epoches')
+title('Loss over each epoches (lr ='+string(lr)+")")
 xlabel("epoches")
 ylabel("Loss")
 
