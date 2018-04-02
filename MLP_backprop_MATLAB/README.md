@@ -1,6 +1,6 @@
 # Multi-Layer Perceptron on Iris Dataset
 
-Use only 3 features in Iris dataset. The structure has 2 layers the only hidden layer contains 3 neurons. L2 Loss is used and for test set 0/1 error is about 6.6%.
+The structure built by MATLAB has 2 layers (single hidden layer). Backpropagation is built without automation tool. Use only 3 features in Iris dataset. L2 Loss is used and 0/1 error test set is about 6.6% when 3 neurons are used in the hidden layer.
 
 ![][1]
 
