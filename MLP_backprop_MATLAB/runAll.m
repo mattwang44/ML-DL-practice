@@ -8,31 +8,31 @@ close all;
 load('IRIS_sample234')
 X = irisInputs_Train_234;
 label = irisTargets_Train;
-
+x_test = irisInputs_Test234;
+label_test = irisTargets_Test;
 %% hyper-parameters
-lr = 0.01;
-N_epoches = 2000;
+lr = 0.005;
+N_epoches = 1s500;
 
 %% activation function & normalization
-% nm1 = "p1"; act1 = "tanh"; 
-nm1 = "none"; act1 = "sigmoid";
-% nm1 = "np1"; act1 = "tanh";
+nm = ["none","np1","p1"];
+act = ["sigmoid", "tanh"];
+n=1;
+for i = 1:3
+    for j=1:3
+        for k=1:3
+            for a = 1:2
+                for b=1:2
+error01 = run(X,label,x_test, label_test, lr, N_epoches, nm(i),nm(j),nm(k),act(a),act(b), n ); n = n+1;
+                end
+            end
+        end
+    end
+end
 
-nm2 = "p1"; act2 = "tanh"; 
-% nm2 = "none"; act2 = "sigmoid"; 
-%% good pair1
-% nm0 = "np1";
-% nm1 = "np1"; act1 = "tanh";.
-% nm2 = "none"; act2 = "sigmoid"; 
-%% good pair2
-% nm0 = "np1";
-% nm1 = "none"; act1 = "sigmoid";
-% nm2 = "none"; act2 = "sigmoid";
-%% good pair2
-nm1 = "p1"; act1 = "tanh"; 
-nm2 = "p1"; act2 = "tanh"; 
-%% init
-nm0 = "np1";
+
+%% runn -------------------------------------------------------------------------------------------------
+function error01 = run(X,label,x_test, y_test, lr, N_epoches, nm0, nm1, nm2, act1, act2, n)
 
 %% number of neurons
 ni = 3; nh = 3; no = 3;
@@ -82,27 +82,28 @@ for epoch=1:N_epoches
         b1 = b1 - lr * delta1;
         L = L + Loss;
     end
-    disp(L)
+    %disp(L)
     LossList(epoch) = L;
 end
 
-%% plot
-figure
-plot(LossList)
-title('Loss over each epoches (lr ='+string(lr)+")")
-xlabel("epoches")
-ylabel("Loss");
-
 %% testing
-x_test = normalize(irisInputs_Test234, nm0);
-y_test = irisTargets_Test;
+x_test = normalize(x_test, nm0);
 [y_hat, ~, ~, ~] = forwardprop(x_test, W1, W2, b1, b2, nm1, nm2, act1, act2);
 [~, argmax_p] = max(y_hat);
 [~, argmax_y] = max(y_test);
 error01 = sum(argmax_p ~= argmax_y) / length(y_test);
-disp("error rate:")
+% disp("error rate:")
 disp(error01)
 
+%% plot
+figure
+plot(LossList)
+title("Loss (nm=["+nm0+","+nm1+","+nm2+"], act=["+act1+","+act2+"]), err="+string(error01))
+xlabel("epoches")
+ylabel("Loss");
+saveas(gcf,string(n)+'.jpg');
+close all;
+end
 %% functions
 function [y_hat, z1, z2, a] = forwardprop(x, W1, W2, b1, b2, nm1, nm2, act1, act2)
 % 1st layer
