@@ -4,17 +4,17 @@ The structure built by MATLAB has 2 layers (single hidden layer with 3 neurons).
 L2-loss is used and 0/1 error rate on test set is shown.
 
 There are four acttivation functions can be used in the hidden layer and the output layer:
- * tanh
- * sigmoid 
- * ReLU
- * Leaky ReLU
+ * "tanh": tanh
+ * "sigmoid": sigmoid
+ * "relu": ReLU
+ * "lrelu": Leaky ReLU
 
 Here explains the alias of the normalization applied on the input data:
  * "none": no normalization is applied
  * "np1": each features are normalized in the range between -1 & +1
  * "p1": each features are normalized in the range between 0 & +1
 
-![][2]
+![][1]
 
 ![][2]
 
