@@ -5,8 +5,6 @@ L2 Loss is used and 0/1 error rate on test set is shown.
 
 The results with different normalization methods and activation functions are saved in the folder named by specific learning rate and number of epoches (e.g. lr0.01epoch2500).
 
-![][1]
-
 Here explains the alias of the normalization:
  * "none": no normalization is applied
  * "np1": each features are normalized in the range between -1 & +1
@@ -14,5 +12,4 @@ Here explains the alias of the normalization:
 
 ![][2]
 
-[1]: ./1.jpg
 [2]: ./i.jpg
