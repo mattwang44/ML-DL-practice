@@ -1,9 +1,9 @@
 # Multi-Layer Perceptron on Iris Dataset
 
 The structure built by MATLAB has 2 layers (single hidden layer with 3 neurons). Backpropagation is built without automation tool. Use only 3 features in Iris dataset.
-L2 Loss is used and 0/1 error rate on test set is shown.
+L2-loss is used and 0/1 error rate on test set is shown.
 
-The results with different normalization methods and activation functions are saved in the folder named by specific learning rate and number of epoches (e.g. lr0.01epoch2500).
+The graph of L2-loss with different normalization methods and activation functions are saved in the folder named with specific learning rate and number of epoches (e.g. lr0.01epoch2500). The results with error rate less than 0.15 is saved in the sub-folder "FeasiblesChoices".
 
 Here explains the alias of the normalization:
  * "none": no normalization is applied

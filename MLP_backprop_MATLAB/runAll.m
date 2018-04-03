@@ -12,7 +12,7 @@ x_test = irisInputs_Test234;
 label_test = irisTargets_Test;
 %% hyper-parameters
 lr = 0.005;
-N_epoches = 1s500;
+N_epoches = 1500;
 
 %% activation function & normalization
 nm = ["none","np1","p1"];
