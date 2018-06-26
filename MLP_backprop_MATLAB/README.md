@@ -3,7 +3,7 @@
 The structure built by MATLAB has 2 layers (single hidden layer with 3 neurons). Backpropagation is built without automation tool. Use only 3 features in Iris dataset.
 L2-loss is used and 0/1 error rate on test set is shown.
 
-There are four acttivation functions can be used in the hidden layer and the output layer:
+There are four activation functions can be used in the hidden layer and the output layer:
  * "tanh": tanh
  * "sigmoid": sigmoid
  * "relu": ReLU
